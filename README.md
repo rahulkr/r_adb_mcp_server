@@ -16,6 +16,8 @@ pip install r-adb-mcp-server
 uvx r-adb-mcp-server
 ```
 
+**Note:** Both the package name and command are `r-adb-mcp-server`.
+
 Then add to your MCP client configuration (Claude Desktop, Cursor, etc.) - see [Configuration](#configuration) section below.
 
 ## Features
@@ -97,7 +99,19 @@ Then add to your MCP client configuration (Claude Desktop, Cursor, etc.) - see [
    adb devices
    ```
 
-3. **Python 3.10+** with `uv` (recommended) or `pip`
+3. **Python 3.10+** and optionally `uv` for running with `uvx`
+
+   To install `uv` (optional, for `uvx` command):
+   ```bash
+   # macOS/Linux
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+
+   # Or with Homebrew (macOS)
+   brew install uv
+
+   # Or with pip
+   pip install uv
+   ```
 
 ## Installation
 

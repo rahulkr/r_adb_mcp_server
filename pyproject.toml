@@ -1,6 +1,6 @@
 [project]
 name = "r-adb-mcp-server"
-version = "0.1.2"
+version = "0.1.3"
 description = "Enhanced ADB MCP Server for Flutter/Android Development - 60+ tools for UI testing, debugging, and visual QA"
 readme = "README.md"
 license = {text = "MIT"}
@@ -46,4 +46,4 @@ build-backend = "hatchling.build"
 packages = ["src/adb_mcp_server"]
 
 [project.scripts]
-adb-mcp-server = "adb_mcp_server:main"
+r-adb-mcp-server = "adb_mcp_server:main"

@@ -4,7 +4,7 @@ ADB MCP Server - Enhanced Android Debug Bridge MCP Server for Flutter/Android De
 
 from .server import mcp
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 def main():
     """Entry point for the MCP server"""
