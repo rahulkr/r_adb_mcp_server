@@ -1,6 +1,22 @@
 # Enhanced ADB MCP Server for Flutter/Android Development
 
+[![PyPI version](https://badge.fury.io/py/r-adb-mcp-server.svg)](https://badge.fury.io/py/r-adb-mcp-server)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A comprehensive MCP server for controlling Android devices via ADB, specifically designed for Flutter development, UI testing, and visual QA workflows.
+
+## Quick Start
+
+```bash
+# Install from PyPI
+pip install r-adb-mcp-server
+
+# Or run directly with uvx (no installation needed)
+uvx r-adb-mcp-server
+```
+
+Then add to your MCP client configuration (Claude Desktop, Cursor, etc.) - see [Configuration](#configuration) section below.
 
 ## Features
 
@@ -85,6 +101,18 @@ A comprehensive MCP server for controlling Android devices via ADB, specifically
 
 ## Installation
 
+### From PyPI (Recommended)
+
+```bash
+# Install globally with pip
+pip install r-adb-mcp-server
+
+# Or use with uvx (no installation needed)
+uvx r-adb-mcp-server
+```
+
+### From Source
+
 ```bash
 cd adb-mcp-server
 
@@ -99,14 +127,42 @@ pip install -e .
 
 ### Claude Desktop
 
-Add to `~/.config/Claude/claude_desktop_config.json` (Linux):
+**Using installed package (recommended):**
+
+macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+Linux: `~/.config/Claude/claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "adb": {
+      "command": "uvx",
+      "args": ["r-adb-mcp-server"]
+    }
+  }
+}
+```
+
+**Or if installed with pip:**
+
+```json
+{
+  "mcpServers": {
+    "adb": {
+      "command": "r-adb-mcp-server"
+    }
+  }
+}
+```
+
+**Using from source:**
 
 ```json
 {
   "mcpServers": {
     "adb": {
       "command": "uv",
-      "args": ["--directory", "/path/to/adb-mcp-server", "run", "python", "server.py"]
+      "args": ["--directory", "/path/to/adb-mcp-server", "run", "python", "src/adb_mcp_server/server.py"]
     }
   }
 }
@@ -116,12 +172,27 @@ Add to `~/.config/Claude/claude_desktop_config.json` (Linux):
 
 Add to `.cursor/mcp.json`:
 
+**Using installed package (recommended):**
+
+```json
+{
+  "mcpServers": {
+    "adb": {
+      "command": "uvx",
+      "args": ["r-adb-mcp-server"]
+    }
+  }
+}
+```
+
+**Using from source:**
+
 ```json
 {
   "mcpServers": {
     "adb": {
       "command": "uv",
-      "args": ["--directory", "/path/to/adb-mcp-server", "run", "python", "server.py"]
+      "args": ["--directory", "/path/to/adb-mcp-server", "run", "python", "src/adb_mcp_server/server.py"]
     }
   }
 }
@@ -129,8 +200,16 @@ Add to `.cursor/mcp.json`:
 
 ### Claude Code
 
+**Using installed package (recommended):**
+
 ```bash
-claude mcp add adb -- uv --directory /path/to/adb-mcp-server run python server.py
+claude mcp add adb -- uvx r-adb-mcp-server
+```
+
+**Using from source:**
+
+```bash
+claude mcp add adb -- uv --directory /path/to/adb-mcp-server run python src/adb_mcp_server/server.py
 ```
 
 ## Available Tools (60+)
