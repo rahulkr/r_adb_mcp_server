@@ -1,6 +1,6 @@
 [project]
 name = "r-adb-mcp-server"
-version = "0.1.1"
+version = "0.1.2"
 description = "Enhanced ADB MCP Server for Flutter/Android Development - 60+ tools for UI testing, debugging, and visual QA"
 readme = "README.md"
 license = {text = "MIT"}

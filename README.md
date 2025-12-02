@@ -212,6 +212,50 @@ claude mcp add adb -- uvx r-adb-mcp-server
 claude mcp add adb -- uv --directory /path/to/adb-mcp-server run python src/adb_mcp_server/server.py
 ```
 
+### GitHub Copilot
+
+**Using installed package (recommended):**
+
+Add to your VS Code settings (`.vscode/settings.json` or User Settings):
+
+```json
+{
+  "github.copilot.chat.mcp.servers": {
+    "adb": {
+      "command": "uvx",
+      "args": ["r-adb-mcp-server"]
+    }
+  }
+}
+```
+
+**Or if installed with pip:**
+
+```json
+{
+  "github.copilot.chat.mcp.servers": {
+    "adb": {
+      "command": "r-adb-mcp-server"
+    }
+  }
+}
+```
+
+**Using from source:**
+
+```json
+{
+  "github.copilot.chat.mcp.servers": {
+    "adb": {
+      "command": "uv",
+      "args": ["--directory", "/path/to/adb-mcp-server", "run", "python", "src/adb_mcp_server/server.py"]
+    }
+  }
+}
+```
+
+**Note:** Make sure you have GitHub Copilot Chat extension installed and MCP support enabled in VS Code.
+
 ## Available Tools (60+)
 
 ### Device Management
